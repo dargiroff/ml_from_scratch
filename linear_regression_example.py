@@ -19,8 +19,14 @@ mse = np.mean((y_test - y_predicted) ** 2)
 
 # Visualize the sample data and the regression line
 fig, ax = plt.subplots()
-ax.scatter(X, y)
-ax.plot(X_test, y_predicted, color='red')
+ax.scatter(X, y, label='Data Points')
+ax.plot(X_test, y_predicted, color='red', label='Fitted Line')
 ax.set_facecolor('white')
+ax.set_xlabel('Features Values', size=15)
+ax.set_ylabel('Target Values', size=15)
+fig.legend(loc='upper right', bbox_to_anchor=(0.85, 0.99))
+ax.tick_params(axis='both', labelsize=12)
+plt.tight_layout()
+plt.savefig(r"/Users/dimitar/IdeaProjects/ml_from_scratch/ols.png")
 plt.show()
 
